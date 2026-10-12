@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Universal Virtual Try-On - Demo Store</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#fafafa;color:#16171d}
+header{padding:16px 24px;background:#fff;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+header b{font-size:18px;letter-spacing:.5px}header span{color:#777;font-size:13px}
+main{max-width:980px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+@media(max-width:720px){main{grid-template-columns:1fr}}
+.pic{background:linear-gradient(160deg,#ececf4,#fff);border-radius:20px;padding:30px;display:grid;place-items:center;aspect-ratio:1}
+.pic img{width:88%}
+h1{margin:0 0 6px;font-size:28px}.price{font-size:26px;font-weight:700;margin:10px 0 14px}
+p{color:#555;line-height:1.6}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+button{font:inherit;font-weight:650;padding:14px 22px;border-radius:12px;cursor:pointer;border:1px solid #16171d;background:#16171d;color:#fff}
+button.alt{background:linear-gradient(135deg,#5b4bf5,#8b5cf6);border:0}
+button.ghost{background:#fff;color:#16171d}
+.note{margin-top:26px;font-size:12.5px;color:#888;background:#fff;border:1px dashed #ddd;padding:12px;border-radius:10px}
+</style></head>
+<body>
+<header><b>VIRTUAL FIT DEMO</b><span>Browser-side camera try-on · No AI API</span></header>
+<main>
+  <div class="pic"><img id="product-image" src="products/black-tshirt.svg" alt="Virtual try-on garment"></div>
+  <div>
+    <label for="garment-category" style="display:block;font-size:13px;font-weight:700;margin-bottom:8px">GARMENT CATEGORY</label>
+    <select id="garment-category" style="font:inherit;padding:10px 12px;border:1px solid #ddd;border-radius:10px;margin-bottom:16px;width:100%;max-width:320px"><option value="tshirt">T-Shirt</option><option value="shirt">Shirt</option><option value="pant">Pants</option><option value="saree">Saree</option><option value="dress">Dress</option><option value="kurti">Kurti</option></select>
+    <h1 id="product-name">Classic Black T-Shirt</h1>
+    <div class="price" id="product-price">₹999</div>
+    <p id="product-description">Choose a garment category and preview it live in your browser.</p>
+    <div class="btns">
+      <button class="ghost" type="button">Add to Cart</button>
+      <button class="alt" type="button" id="virtual-try-on-btn">&#128085; Virtual Try-On</button>
+    </div>
+    <div class="note">Demo license <b>VT-DEMO-0001</b> on <b>localhost</b>. Camera access requires HTTPS in production (localhost is allowed). Garments are transparent 2D overlays; this is not cloth-physics 3D.</div>
+  </div>
+</main>
+<script src="/cdn/vto.js"></script>
+<script src="demo.js"></script>
+</body></html>
