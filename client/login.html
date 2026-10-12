@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in - Virtual Try-On</title><link rel="stylesheet" href="css/app.css"></head>
+<body><div class="authwrap"><div class="authcard">
+<div class="logo" style="width:44px;height:44px;border-radius:14px;font-size:22px">&#128085;</div>
+<h1>Virtual Try-On</h1><p class="muted" style="margin:0">Merchant dashboard</p>
+<div class="tabs"><button type="button" id="t-in" class="on">Sign in</button><button type="button" id="t-up">Create account</button></div>
+<form id="f">
+<div id="up-only" style="display:none">
+<label for="name">Your name</label><input id="name" maxlength="100" autocomplete="name">
+<label for="company">Company</label><input id="company" maxlength="150" autocomplete="organization">
+<label for="phone">Phone (optional)</label><input id="phone" maxlength="30" autocomplete="tel">
+</div>
+<label for="email">Email</label><input id="email" type="email" autocomplete="username" required>
+<label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" minlength="8" required>
+<div class="err" id="err" role="alert"></div>
+<button class="btn primary" style="width:100%;margin-top:8px" id="go">Sign in</button>
+<p class="muted small" id="note" style="display:none;margin-bottom:0">After creating an account, your administrator activates your Try-On license.</p>
+</form></div></div>
+<script src="js/common.js"></script><script src="js/login.js"></script></body></html>
